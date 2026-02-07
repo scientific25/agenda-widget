@@ -1,29 +1,22 @@
 # Agenda Widget (Android)
 
-## Objetivo
-Aplicativo Android em Kotlin com um widget que mostra os eventos de hoje.
-Fonte dos dados: Android Calendar Provider (calendários já sincronizados no aparelho, incluindo Google).
+App Android em Kotlin com um **widget** que mostra os eventos do dia a partir do **Android Calendar Provider** (os calendários já sincronizados no aparelho, incluindo Google).
 
-## Funcionalidades (MVP)
-- Widget mostra lista de eventos de hoje (hora + título).
-- Atualização periódica a cada 30 minutos.
-- Ao tocar no widget, abre o app.
+## MVP
+- Widget mostra até 8 eventos de hoje no formato `HH:mm — Título`.
+- Sem eventos: `Nenhum evento hoje.`
+- Sem permissão: `Sem permissão de calendário. Abra o app e conceda acesso.`
+- Tocar no widget abre o app (tela simples que pede permissão).
 
-## Stack
-- Kotlin
-- AppWidget (RemoteViews)
-- Leitura via Calendar Provider
-- WorkManager para atualização
+## Requisitos
+- Android Studio (JDK 17)
+- Min SDK 26 (Android 8.0)
 
-## Permissões
-- READ_CALENDAR (Android 13+ pode exigir runtime permission no app)
-
-## Rodar local
-- Abra no Android Studio
-- Run no emulador ou aparelho
+## Rodar
+1. Abra este projeto no Android Studio.
+2. Rode no emulador/aparelho.
+3. Conceda a permissão de calendário quando solicitado.
+4. Adicione o widget na Home.
 
 ## CI
-GitHub Actions roda:
-- assembleDebug
-- test
-- lint
+GitHub Actions roda build/test/lint em PRs e pushes.
